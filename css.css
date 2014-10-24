@@ -1,0 +1,23 @@
+.container{
+    width:855px ;
+    margin: 25px auto;
+}
+
+.left{
+    float:left;
+    width: 255px;
+}
+.right{
+    float: right;
+    width: 400px;
+}
+
+.left .input-message{
+    width: 210px;
+    height: 30px;
+    background-color: aliceblue;
+}
+
+.right .messages-list {
+    margin: 0px;
+}
