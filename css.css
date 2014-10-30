@@ -10,14 +10,48 @@
 .right{
     float: right;
     width: 400px;
+
 }
 
 .left .input-message{
-    width: 210px;
-    height: 30px;
+    width: 360px;
+    height: 165px;
     background-color: aliceblue;
+    text-align: left;
+    font-size: 20px;
+    margin: 0px;
+    padding: 0px;
 }
 
 .right .messages-list {
     margin: 0px;
+}
+
+main .right fieldset ul{
+    float: left;
+}
+
+.btn-add{
+    font-size: 30px;
+    width: 55px;
+    height: 55px;
+    background-color: darkseagreen;
+    margin:0px;
+    padding: 0px;
+    float: right;
+
+}
+
+.empty-message{
+    color: gray;
+}
+
+main fieldset{
+    height: 250px;
+}
+
+
+main .right fieldset{
+    height: 250px;
+    overflow: scroll;
 }

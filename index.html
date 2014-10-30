@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="css.css"/>
+
 </head>
 <body>
 
@@ -11,7 +12,7 @@
     <nav>
         <div>
             <hr/>
-            <h1>Chat</h1>
+            <h1>...</h1>
 
         </div>
     </nav>
@@ -20,21 +21,36 @@
         <hr/>
 
         <div class="left">
-            <input type="text" name="message" class="input-message"/>
-            <button>+ </button>
+            <fieldset>
+                <legend>----</legend>
+                <input id="input_message"
+                       type="text"
+                       name="message" value=""
+                       class="input-message"/>
+
+                <button id="btn_add_message"
+                        class="btn-add"> +
+                </button>
+            </fieldset>
         </div>
 
-        <div class="right">
-        <ul class="messages-list">
-            <li>Hola</li>
-            <li>Que Tal</li>
-        </ul>
-        </div>
+            <div class="right">
+                <fieldset>
+                    <legend>----</legend>
+
+                <ul id="ul_message_list" class="messages-list">
+                    <p id="empty_message" class="empty-message">No existen mensajes...</p>
+                </ul>
+                </fieldset>
+            </div>
+
+
     </main>
 
     <footer>
 
     </footer>
+    <script src="app.js"></script>
 </div>
 </body>
 </html>
