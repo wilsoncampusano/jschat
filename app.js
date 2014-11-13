@@ -19,7 +19,7 @@ var addLiElementToList = function (liElement){
 };
 
 var cleanInputText = function (){
-	giveMeInputText().textContent='';
+	giveMeInputText().value='';
 };
 
 var giveMeUlList = function (){
@@ -54,12 +54,14 @@ var addMessageToList = function (){
 
 var onClick = function onClick(event){
 	addMessageToList();
+	cleanInputText();
 };
 
 var onKeyUpEnter = function (event){
 	var ENTER_CODE = 13;
 	if(event.keyCode === ENTER_CODE){
 		addMessageToList();
+		cleanInputText();
 	}
 };
 
@@ -68,7 +70,7 @@ var initializeApp = function(){
 			.addEventListener('click', onClick);
 
 	giveMeInputText()
-			.addEventListener('onkeyup', onKeyUpEnter);
+			.addEventListener('keyup', onKeyUpEnter);
 };
 
 
