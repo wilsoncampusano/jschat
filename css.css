@@ -44,6 +44,8 @@ main .right fieldset ul{
 
 .empty-message{
     color: gray;
+    text-decoration: none;
+    list-style: none;
 }
 
 main fieldset{

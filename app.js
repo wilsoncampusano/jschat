@@ -58,7 +58,6 @@ var addMessageToList = function (){
 	notifyNoInputError();
 	var inputText = giveMeInputTextContent();
 	if(isNotEmpty(inputText)){
-
 		addLiElementToList(buildLiMessage(inputText));
 		giveMeEmptyMessageElement().setAttribute('hidden','hidden');
 		return;
