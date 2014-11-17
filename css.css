@@ -55,3 +55,8 @@ main .right fieldset{
     height: 250px;
     overflow: scroll;
 }
+
+
+.input-error{
+    border: solid #ff382d 3px;
+}

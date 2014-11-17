@@ -2,9 +2,10 @@
  * Created by wilson.campusano on 10/30/2014.
  */
 
-var isNotEmptyOrUndefined = function(str){
+var isNotEmpty = function(str){
 	var s = str.trim();
-	return (s !== undefined || s !== '');
+	var result =s !== '';
+	return result;
 };
 
 var buildLiMessage = function (text){
@@ -19,23 +20,23 @@ var addLiElementToList = function (liElement){
 };
 
 var cleanInputText = function (){
-	giveMeInputText().value='';
+	giveMeInputTextElement().value='';
 };
 
 var giveMeUlList = function (){
 	return document.getElementById('ul_message_list');
 };
 
-var giveMeInputText =  function (){
+var giveMeInputTextElement =  function (){
 	return document.getElementById('input_message');
 };
 
-var giveMeAddButton = function (){
+var giveMeAddButtonElement = function (){
 	return document.getElementById('btn_add_message');
 };
 
 var giveMeInputTextContent  = function (){
-	return giveMeInputText().value;
+	return giveMeInputTextElement().value;
 };
 
 var giveMeEmptyMessageElement = function(){
@@ -43,12 +44,26 @@ var giveMeEmptyMessageElement = function(){
 };
 
 
+var  notifyInputError = function() {
+	var inputElement = giveMeInputTextElement();
+	inputElement.classList.add('input-error');
+};
+
+var notifyNoInputError = function(){
+	var inputElement = giveMeInputTextElement();
+	inputElement.classList.remove('input-error');
+};
+
 var addMessageToList = function (){
+	notifyNoInputError();
 	var inputText = giveMeInputTextContent();
-	if(isNotEmptyOrUndefined(inputText)){
+	if(isNotEmpty(inputText)){
+
 		addLiElementToList(buildLiMessage(inputText));
 		giveMeEmptyMessageElement().setAttribute('hidden','hidden');
 		return;
+	}else{
+		notifyInputError();
 	}
 };
 
@@ -66,11 +81,12 @@ var onKeyUpEnter = function (event){
 };
 
 var initializeApp = function(){
-	giveMeAddButton()
+	giveMeAddButtonElement()
 			.addEventListener('click', onClick);
 
-	giveMeInputText()
+	giveMeInputTextElement()
 			.addEventListener('keyup', onKeyUpEnter);
+	giveMeInputTextElement().focus();
 };
 
 
