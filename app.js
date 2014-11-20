@@ -63,6 +63,7 @@ var addMessageToList = function (){
 		return;
 	}else{
 		notifyInputError();
+	giveMeInputTextElement().blur();
 	}
 };
 
